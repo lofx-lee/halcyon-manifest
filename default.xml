@@ -1046,5 +1046,6 @@
   <include name="xml/halcyon.xml" />
   <include name="xml/qcom.xml" />
   <include name="xml/other.xml" />
+  <include name="local_manifest.xml" />  
 
 </manifest>

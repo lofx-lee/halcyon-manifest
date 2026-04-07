@@ -10,10 +10,30 @@ Halcyon is an aftermarket firmware based on AOSP with unique UI and features.
 
 ### Downloading Halcyon source code
 ```
-repo init -u https://github.com/halcyonproject/manifest -b 16.2 --git-lfs
+repo init -u git@github.com:lofx-lee/halcyon-manifest.git -b bp4a --git-lfs
 ```
 ```
-repo sync -j$(nproc --all) --force-sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+```
+
+## Building the System
+
+Initialize the ROM build environment by sourcing the envsetup.sh script:
+
+```bash
+. build/envsetup.sh
+```
+
+After cloning the device-specific sources, use breakfast to configure the build for your device:
+
+```bash
+lunch halcyon_nuwa-bp4a-userdebug
+```
+
+Start the compilation:
+
+```bash
+mka carthage -j$(nproc --all)
 ```
 
 ### Building Halcyon
